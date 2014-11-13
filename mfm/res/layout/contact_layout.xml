@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DBD8D3"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bande"
+        android:gravity="center_vertical"
+        android:weightSum="100" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:src="@drawable/fb" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:src="@drawable/youtube" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:src="@drawable/twitter" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:src="@drawable/mail_ic" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="VOUS ETES TEMOINS D&apos;UN FAIT MARQUANT ?"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_camera" >
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/add" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/frameLayout1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/frameLayout1"
+        android:text="Cliquez sur la camera pour prendre une photo"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frameLayout1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100" >
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/nom"
+                    android:ems="10"
+                    android:hint="nom"
+                    android:paddingLeft="5dp" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="50"
+                    android:background="@drawable/nom"
+                    android:ems="10"
+                    android:hint="prenom"
+                    android:paddingLeft="5dp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/email"
+                android:ems="10"
+                android:hint="email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="5dp" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/description"
+                android:ems="10"
+                android:hint="description"
+                android:inputType="textMultiLine"
+                android:paddingLeft="5dp" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/envoyer"
+                android:text="Envoyer"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
