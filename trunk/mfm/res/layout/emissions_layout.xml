@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/body_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bande"
+        android:gravity="center_vertical"
+        android:weightSum="100" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:src="@drawable/fb" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:src="@drawable/youtube" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:src="@drawable/twitter" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:src="@drawable/mail_ic" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>
