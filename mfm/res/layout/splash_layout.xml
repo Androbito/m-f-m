@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash_bg"
-    tools:context="m.hiddentalent.mfm.SplashActivity" >
+    tools:context="m.androbito.mfm.SplashActivity" >
 
     <ImageView
         android:id="@+id/imageView1"

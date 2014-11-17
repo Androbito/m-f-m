@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="m.hiddentalent.mfm"
+    package="m.androbito.mfm"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="9"
         android:targetSdkVersion="14" />
+    
     <uses-permission android:name="android.permission.INTERNET"/>
-
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -25,27 +27,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="m.hiddentalent.mfm.TabsActivity"
+            android:name="m.androbito.mfm.TabsActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="m.hiddentalent.mfm.RadioActivity"
+            android:name="m.androbito.mfm.RadioActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="m.hiddentalent.mfm.EmissionsActivity"
+            android:name="m.androbito.mfm.EmissionsActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="m.hiddentalent.mfm.PodcastActivity"
+            android:name="m.androbito.mfm.PodcastActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="m.hiddentalent.mfm.EvenementActivity"
+            android:name="m.androbito.mfm.EvenementActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="m.hiddentalent.mfm.ContactActivity"
+            android:name="m.androbito.mfm.ContactActivity"
             android:screenOrientation="portrait" >
         </activity>
     </application>

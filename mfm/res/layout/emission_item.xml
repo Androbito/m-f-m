@@ -14,9 +14,9 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         android:text="Titre"
-        android:textSize="30sp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#C60B1E"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/khalidnizar" />
+        android:layout_margin="5dp" />
 
     <TextView
         android:id="@+id/textView3"

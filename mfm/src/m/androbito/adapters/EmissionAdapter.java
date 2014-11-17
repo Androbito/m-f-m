@@ -1,7 +1,13 @@
-package m.hiddentalent.mfm;
+package m.androbito.adapters;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import m.androbito.mfm.R;
+import m.androbito.mfm.R.id;
+import m.androbito.mfm.R.layout;
+import m.androbito.model.Emission;
+import m.androbito.utils.ImageLoader;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,30 +21,13 @@ public class EmissionAdapter extends BaseAdapter {
 
 	private LayoutInflater mInflater;
 	private List<Emission> emissions;
+	private ImageLoader imageLoader;
 
-	public EmissionAdapter(Context _context) {
+	public EmissionAdapter(Context _context, List<Emission> mEmissions) {
 		mInflater = LayoutInflater.from(_context);
 		emissions = new ArrayList<Emission>();
-		emissions.add(new Emission("ISSTIRAHAT", "Khalid NIZAR",
-				R.drawable.khalidnizar, "18:00"));
-		emissions.add(new Emission("TOMBILE", "DAVID Jeremy",
-				R.drawable.davidjeremie, "09:00"));
-		emissions.add(new Emission("DIN WA DOUNIA", "Hassan BELAID",
-				R.drawable.elhassanaitbilaid, "15:00"));
-		emissions.add(new Emission("Bonjour", "Khalid NIZAR",
-				R.drawable.khalidnizar, "07:00"));
-		emissions.add(new Emission("Rihat dwar", "Khalid NIZAR",
-				R.drawable.rihatedouar, "10:00"));
-		emissions.add(new Emission("ISSTIRAHAT", "Khalid NIZAR",
-				R.drawable.khalidnizar, "18:00"));
-		emissions.add(new Emission("TOMBILE", "DAVID Jeremy",
-				R.drawable.davidjeremie, "09:00"));
-		emissions.add(new Emission("DIN WA DOUNIA", "Hassan BELAID",
-				R.drawable.elhassanaitbilaid, "15:00"));
-		emissions.add(new Emission("Bonjour", "Khalid NIZAR",
-				R.drawable.khalidnizar, "07:00"));
-		emissions.add(new Emission("Rihat dwar", "Khalid NIZAR",
-				R.drawable.rihatedouar, "10:00"));
+		emissions.addAll(mEmissions);
+		imageLoader = new ImageLoader(_context);
 
 	}
 
@@ -70,8 +59,8 @@ public class EmissionAdapter extends BaseAdapter {
 				position).getAuditeur_emission());
 		((TextView) v.findViewById(R.id.textView3)).setText(emissions.get(
 				position).getRdv());
-		((ImageView) v.findViewById(R.id.imageView1))
-				.setImageResource(emissions.get(position).getIcon());
+		ImageView iconImg = ((ImageView) v.findViewById(R.id.imageView1));
+		imageLoader.DisplayImage(emissions.get(position).getIcon(), iconImg);
 		return v;
 	}
 

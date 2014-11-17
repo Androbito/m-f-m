@@ -1,4 +1,4 @@
-package m.hiddentalent.mfm;
+package m.androbito.mfm;
 
 import android.app.TabActivity;
 import android.content.Context;

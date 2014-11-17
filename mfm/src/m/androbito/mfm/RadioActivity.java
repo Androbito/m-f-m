@@ -1,4 +1,4 @@
-package m.hiddentalent.mfm;
+package m.androbito.mfm;
 
 import net.droidlabs.audio.ogg.OggStreamPlayer;
 import android.app.Activity;
