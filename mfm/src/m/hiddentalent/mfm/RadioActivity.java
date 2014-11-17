@@ -29,7 +29,13 @@ public class RadioActivity extends Activity {
 				
 				try {
 					if (playing){
-					player.playAsync("http://images.wikia.com/saintsrow/images/e/ec/SR2_cemetery_house_Ambients_00574.ogg");
+						player.stop();
+						playing=  false;
+					
+					}
+					else{
+						player.playAsync("http://images.wikia.com/saintsrow/images/e/ec/SR2_cemetery_house_Ambients_00574.ogg");
+						playing =  true;
 					}
 					} catch (Exception e) {
 					Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();	
