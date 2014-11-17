@@ -1,14 +1,26 @@
-package m.hiddentalent.mfm;
+package m.androbito.model;
+
+import com.google.gson.annotations.SerializedName;
 
 public class Emission {
 
+	@SerializedName("id")
+	private String id_emission;
+
+	@SerializedName("title")
 	private String title_emission;
+
+	@SerializedName("body")
 	private String auditeur_emission;
-	private int icon;
+
+	@SerializedName("imagepath")
+	private String icon;
+
+	@SerializedName("mytime")
 	private String rdv;
 
-	public Emission(String title_emission, String auditeur_emission, int icon,
-			String rdv) {
+	public Emission(String title_emission, String auditeur_emission,
+			String icon, String rdv) {
 		super();
 		this.title_emission = title_emission;
 		this.auditeur_emission = auditeur_emission;
@@ -32,11 +44,19 @@ public class Emission {
 		this.auditeur_emission = auditeur_emission;
 	}
 
-	public int getIcon() {
-		return icon;
+	public String getId_emission() {
+		return id_emission;
 	}
 
-	public void setIcon(int icon) {
+	public void setId_emission(String id_emission) {
+		this.id_emission = id_emission;
+	}
+
+	public String getIcon() {
+		return "http://" + icon;
+	}
+
+	public void setIcon(String icon) {
 		this.icon = icon;
 	}
 
