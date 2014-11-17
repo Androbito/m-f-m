@@ -11,16 +11,19 @@ import android.widget.Toast;
 
 public class RadioActivity extends Activity {
 	
-	MediaPlayer mMediaPlayer ;
-	OggStreamPlayer player;
-	boolean playing=  false;
+	private MediaPlayer mMediaPlayer ;
+	private OggStreamPlayer player;
+	private boolean playing=  false;
+	ImageView playbutton,stopbutton;
+	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.radio_layout);
+        
         player = new OggStreamPlayer();
-       
-        ImageView playbutton = (ImageView) findViewById(R.id.imageView3);
-        ImageView stopbutton = (ImageView) findViewById(R.id.imageView4);
+        playbutton = (ImageView) findViewById(R.id.imageView3);
+        stopbutton = (ImageView) findViewById(R.id.imageView4);
+        
         playbutton.setOnClickListener(new OnClickListener() {
 			
 			@Override
