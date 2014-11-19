@@ -16,6 +16,9 @@ public class Event {
 	@SerializedName("mytime")
 	private String time;
 
+	@SerializedName("description")
+	private String detail;
+
 	public String getId_event() {
 		return id_event;
 	}
@@ -48,13 +51,22 @@ public class Event {
 		this.time = time;
 	}
 
-	public Event(String id_event, String title_event, String city, String time) {
+	public String getDetail() {
+		return detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+
+	public Event(String id_event, String title_event, String city, String time,
+			String detail) {
 		super();
 		this.id_event = id_event;
 		this.title_event = title_event;
 		this.city = city;
 		this.time = time;
+		this.detail = detail;
 	}
 
-	
 }

@@ -7,10 +7,11 @@
     <uses-sdk
         android:minSdkVersion="9"
         android:targetSdkVersion="14" />
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -48,6 +49,10 @@
         </activity>
         <activity
             android:name="m.androbito.mfm.ContactActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="m.androbito.mfm.DetailsActivity"
             android:screenOrientation="portrait" >
         </activity>
     </application>

@@ -10,12 +10,17 @@ import m.androbito.network.WSHelperListener;
 import m.androbito.utils.Urls;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class EmissionsActivity extends Activity implements WSHelperListener {
+public class EmissionsActivity extends Activity implements WSHelperListener,
+		OnItemClickListener {
 
 	ListView emissionsLv;
 	private ConnectivityManager manager;
@@ -26,6 +31,7 @@ public class EmissionsActivity extends Activity implements WSHelperListener {
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		setContentView(R.layout.emissions_layout);
 		emissionsLv = (ListView) findViewById(R.id.listView1);
+		emissionsLv.setOnItemClickListener(this);
 		WSHelper.getInstance().addWSHelperListener(this);
 		WSHelper.getInstance().getEmissions(Urls.apiUrl, manager, this);
 
@@ -54,12 +60,22 @@ public class EmissionsActivity extends Activity implements WSHelperListener {
 	@Override
 	public void onEventsLoaded(List<Event> events) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onErrorLoadingEvents(String error) {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		// TODO Auto-generated method stub
+		Intent detailIntent = new Intent(this, DetailsActivity.class);
+		detailIntent.putExtra("detail", ((Emission) ((EmissionAdapter) emissionsLv
+				.getAdapter()).getItem(position)).getDescription());
+		startActivity(detailIntent);
 	}
 }
