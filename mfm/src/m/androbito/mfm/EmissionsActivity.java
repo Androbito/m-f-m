@@ -4,6 +4,7 @@ import java.util.List;
 
 import m.androbito.adapters.EmissionAdapter;
 import m.androbito.model.Emission;
+import m.androbito.model.Event;
 import m.androbito.network.WSHelper;
 import m.androbito.network.WSHelperListener;
 import m.androbito.utils.Urls;
@@ -26,7 +27,7 @@ public class EmissionsActivity extends Activity implements WSHelperListener {
 		setContentView(R.layout.emissions_layout);
 		emissionsLv = (ListView) findViewById(R.id.listView1);
 		WSHelper.getInstance().addWSHelperListener(this);
-		WSHelper.getInstance().getEmissions(Urls.emissionsUrl, manager, this);
+		WSHelper.getInstance().getEmissions(Urls.apiUrl, manager, this);
 
 	}
 
@@ -48,5 +49,17 @@ public class EmissionsActivity extends Activity implements WSHelperListener {
 	public void onErrorLoadingEmissions(String error) {
 		// TODO Auto-generated method stub
 		Log.e("error", error);
+	}
+
+	@Override
+	public void onEventsLoaded(List<Event> events) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onErrorLoadingEvents(String error) {
+		// TODO Auto-generated method stub
+		
 	}
 }
