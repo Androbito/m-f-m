@@ -4,11 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import m.androbito.mfm.R;
-import m.androbito.mfm.R.id;
-import m.androbito.mfm.R.layout;
 import m.androbito.model.Emission;
 import m.androbito.utils.ImageLoader;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

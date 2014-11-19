@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 import m.androbito.model.Emission;
+import m.androbito.model.Event;
 import android.app.Activity;
 import android.net.ConnectivityManager;
 import android.util.Log;
@@ -62,6 +63,36 @@ public class WSHelper {
 				for (WSHelperListener wsHelperListener : wsHelperListeners)
 					wsHelperListener.onErrorLoadingEmissions(exception
 							.toString());
+			}
+		});
+		wt.start();
+	}
+
+	public void getEvents(String url, ConnectivityManager manager,
+			final Activity context) {
+
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("tag", "getevents");
+		WebThread wt = new WebThread(url, WebThread.METHOD_POST, params,
+				manager, WebThread.ENCODING_UTF_8, false);
+		wt.setListener(new WebListener() {
+
+			@Override
+			public void onFinish(String url, String result) {
+				Log.i("Response", "" + result);
+
+				List<Event> eventsList = gson.fromJson(result,
+						new TypeToken<ArrayList<Event>>() {
+						}.getType());
+				for (WSHelperListener wsHelperListener : wsHelperListeners)
+					wsHelperListener.onEventsLoaded(eventsList);
+			}
+
+			@Override
+			public void onError(WebException exception) {
+				exception.printStackTrace();
+				for (WSHelperListener wsHelperListener : wsHelperListeners)
+					wsHelperListener.onErrorLoadingEvents(exception.toString());
 			}
 		});
 		wt.start();
