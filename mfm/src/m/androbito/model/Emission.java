@@ -19,13 +19,19 @@ public class Emission {
 	@SerializedName("mytime")
 	private String rdv;
 
-	public Emission(String title_emission, String auditeur_emission,
-			String icon, String rdv) {
+	@SerializedName("description")
+	private String description;
+
+	public Emission(String id_emission, String title_emission,
+			String auditeur_emission, String icon, String rdv,
+			String description) {
 		super();
+		this.id_emission = id_emission;
 		this.title_emission = title_emission;
 		this.auditeur_emission = auditeur_emission;
 		this.icon = icon;
 		this.rdv = rdv;
+		this.description = description;
 	}
 
 	public String getTitle_emission() {
@@ -66,6 +72,14 @@ public class Emission {
 
 	public void setRdv(String rdv) {
 		this.rdv = rdv;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

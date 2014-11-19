@@ -10,11 +10,16 @@ import m.androbito.network.WSHelperListener;
 import m.androbito.utils.Urls;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class EvenementActivity extends Activity implements WSHelperListener{
+public class EvenementActivity extends Activity implements WSHelperListener,
+		OnItemClickListener {
 	private ConnectivityManager manager;
 	private ListView eventsLv;
 
@@ -24,6 +29,7 @@ public class EvenementActivity extends Activity implements WSHelperListener{
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		setContentView(R.layout.evenement_layout);
 		eventsLv = (ListView) findViewById(R.id.listView1);
+		eventsLv.setOnItemClickListener(this);
 		WSHelper.getInstance().addWSHelperListener(this);
 		WSHelper.getInstance().getEvents(Urls.apiUrl, manager, this);
 	}
@@ -31,13 +37,13 @@ public class EvenementActivity extends Activity implements WSHelperListener{
 	@Override
 	public void onEmissionsLoaded(List<Emission> emissions) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onErrorLoadingEmissions(String error) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -48,8 +54,8 @@ public class EvenementActivity extends Activity implements WSHelperListener{
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				eventsLv.setAdapter(new EventAdapter(
-						getApplicationContext(), events));
+				eventsLv.setAdapter(new EventAdapter(getApplicationContext(),
+						events));
 			}
 		});
 	}
@@ -57,6 +63,16 @@ public class EvenementActivity extends Activity implements WSHelperListener{
 	@Override
 	public void onErrorLoadingEvents(String error) {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		// TODO Auto-generated method stub
+		Intent detailIntent = new Intent(this, DetailsActivity.class);
+		detailIntent.putExtra("detail", ((Event) ((EventAdapter) eventsLv
+				.getAdapter()).getItem(position)).getDetail());
+		startActivity(detailIntent);
 	}
 }
