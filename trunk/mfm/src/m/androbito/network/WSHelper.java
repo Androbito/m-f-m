@@ -41,7 +41,7 @@ public class WSHelper {
 			final Activity context) {
 
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("tag", "getemission");
+		params.put("page", "1");
 		WebThread wt = new WebThread(url, WebThread.METHOD_POST, params,
 				manager, WebThread.ENCODING_UTF_8, false);
 		wt.setListener(new WebListener() {

@@ -4,29 +4,25 @@ import com.google.gson.annotations.SerializedName;
 
 public class Emission {
 
-	@SerializedName("id")
-	private String id_emission;
-
-	@SerializedName("title")
+	@SerializedName("item")
 	private String title_emission;
 
-	@SerializedName("body")
+	@SerializedName("animateur")
 	private String auditeur_emission;
 
-	@SerializedName("imagepath")
+	@SerializedName("thumb")
 	private String icon;
 
-	@SerializedName("mytime")
+	@SerializedName("heure")
 	private String rdv;
 
 	@SerializedName("description")
 	private String description;
 
-	public Emission(String id_emission, String title_emission,
+	public Emission(String title_emission,
 			String auditeur_emission, String icon, String rdv,
 			String description) {
 		super();
-		this.id_emission = id_emission;
 		this.title_emission = title_emission;
 		this.auditeur_emission = auditeur_emission;
 		this.icon = icon;
@@ -50,16 +46,9 @@ public class Emission {
 		this.auditeur_emission = auditeur_emission;
 	}
 
-	public String getId_emission() {
-		return id_emission;
-	}
-
-	public void setId_emission(String id_emission) {
-		this.id_emission = id_emission;
-	}
 
 	public String getIcon() {
-		return "http://" + icon;
+		return "http://www.mfmradio.ma/uploads/animateurs/min/" + icon;
 	}
 
 	public void setIcon(String icon) {
@@ -75,11 +64,11 @@ public class Emission {
 	}
 
 	public String getDescription() {
-		return description;
+		return ""+description;
 	}
 
 	public void setDescription(String description) {
-		this.description = description;
+		this.description = ""+description;
 	}
 
 }
