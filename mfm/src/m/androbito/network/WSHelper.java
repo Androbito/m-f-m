@@ -9,6 +9,7 @@ import java.util.Set;
 
 import m.androbito.model.Emission;
 import m.androbito.model.Event;
+import m.androbito.model.Podcast;
 import android.app.Activity;
 import android.net.ConnectivityManager;
 import android.util.Log;
@@ -72,7 +73,7 @@ public class WSHelper {
 			final Activity context) {
 
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("tag", "getevents");
+		params.put("page", "2");
 		WebThread wt = new WebThread(url, WebThread.METHOD_POST, params,
 				manager, WebThread.ENCODING_UTF_8, false);
 		wt.setListener(new WebListener() {
@@ -93,6 +94,37 @@ public class WSHelper {
 				exception.printStackTrace();
 				for (WSHelperListener wsHelperListener : wsHelperListeners)
 					wsHelperListener.onErrorLoadingEvents(exception.toString());
+			}
+		});
+		wt.start();
+	}
+
+	public void getPodcasts(String url, ConnectivityManager manager,
+			final Activity context) {
+
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("page", "3");
+		WebThread wt = new WebThread(url, WebThread.METHOD_POST, params,
+				manager, WebThread.ENCODING_UTF_8, false);
+		wt.setListener(new WebListener() {
+
+			@Override
+			public void onFinish(String url, String result) {
+				Log.i("Response", "" + result);
+
+				List<Podcast> podcastsList = gson.fromJson(result,
+						new TypeToken<ArrayList<Podcast>>() {
+						}.getType());
+				for (WSHelperListener wsHelperListener : wsHelperListeners)
+					wsHelperListener.onPodcastsLoaded(podcastsList);
+			}
+
+			@Override
+			public void onError(WebException exception) {
+				exception.printStackTrace();
+				for (WSHelperListener wsHelperListener : wsHelperListeners)
+					wsHelperListener.onErrorLoadingPodcasts(exception
+							.toString());
 			}
 		});
 		wt.start();

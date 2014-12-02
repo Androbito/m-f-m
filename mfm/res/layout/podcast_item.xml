@@ -7,19 +7,19 @@
 
     <FrameLayout
         android:id="@+id/frameLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="5dp"
-        android:background="@drawable/bg_camera" >
+        android:background="#000000" >
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/add" />
+            android:src="@drawable/podcast_actif" />
     </FrameLayout>
 
     <TextView
@@ -27,35 +27,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/frameLayout1"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
-        android:layout_toLeftOf="@+id/frameLayout1"
         android:text="Titre"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#C60B1E"
-        android:textSize="15sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/frameLayout1"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="5dp"
-        android:text="Ville"
-        android:textColor="#6E6E6E" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:text="Date"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#C60B1E"
-        android:textSize="10sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
