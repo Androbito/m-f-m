@@ -5,6 +5,7 @@ import java.util.List;
 import m.androbito.adapters.EventAdapter;
 import m.androbito.model.Emission;
 import m.androbito.model.Event;
+import m.androbito.model.Podcast;
 import m.androbito.network.WSHelper;
 import m.androbito.network.WSHelperListener;
 import m.androbito.utils.Urls;
@@ -74,5 +75,17 @@ public class EvenementActivity extends Activity implements WSHelperListener,
 		detailIntent.putExtra("detail", ((Event) ((EventAdapter) eventsLv
 				.getAdapter()).getItem(position)).getDetail());
 		startActivity(detailIntent);
+	}
+
+	@Override
+	public void onPodcastsLoaded(List<Podcast> podcasts) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onErrorLoadingPodcasts(String error) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -4,9 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class Emission {
 
-	@SerializedName("item")
-	private String title_emission;
-
+	@SerializedName("item1")
+	private String title_emission1;
+	@SerializedName("item2")
+	private String title_emission2;
+	
 	@SerializedName("animateur")
 	private String auditeur_emission;
 
@@ -19,24 +21,11 @@ public class Emission {
 	@SerializedName("description")
 	private String description;
 
-	public Emission(String title_emission,
-			String auditeur_emission, String icon, String rdv,
-			String description) {
-		super();
-		this.title_emission = title_emission;
-		this.auditeur_emission = auditeur_emission;
-		this.icon = icon;
-		this.rdv = rdv;
-		this.description = description;
-	}
 
 	public String getTitle_emission() {
-		return title_emission;
+		return title_emission1+" "+title_emission2;
 	}
 
-	public void setTitle_emission(String title_emission) {
-		this.title_emission = title_emission;
-	}
 
 	public String getAuditeur_emission() {
 		return auditeur_emission;

@@ -7,13 +7,13 @@ public class Event {
 	@SerializedName("id")
 	private String id_event;
 
-	@SerializedName("title")
+	@SerializedName("nom")
 	private String title_event;
 
-	@SerializedName("city")
+	@SerializedName("adresse")
 	private String city;
 
-	@SerializedName("mytime")
+	@SerializedName("date_debut")
 	private String time;
 
 	@SerializedName("description")
