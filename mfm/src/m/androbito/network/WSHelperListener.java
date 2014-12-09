@@ -2,6 +2,7 @@ package m.androbito.network;
 
 import java.util.List;
 
+import m.androbito.model.CurrentEmission;
 import m.androbito.model.Emission;
 import m.androbito.model.Event;
 import m.androbito.model.Podcast;
@@ -16,4 +17,7 @@ public interface WSHelperListener {
 	
 	void onPodcastsLoaded(List<Podcast> podcasts);
 	void onErrorLoadingPodcasts(String error);
+	
+	void onCurrentEmissionLoaded(CurrentEmission currentEmission);
+	void onErrorLoadingCurrentEmission(String error);
 }
