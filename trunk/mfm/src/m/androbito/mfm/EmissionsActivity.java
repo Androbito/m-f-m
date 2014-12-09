@@ -3,6 +3,7 @@ package m.androbito.mfm;
 import java.util.List;
 
 import m.androbito.adapters.EmissionAdapter;
+import m.androbito.model.CurrentEmission;
 import m.androbito.model.Emission;
 import m.androbito.model.Event;
 import m.androbito.model.Podcast;
@@ -75,6 +76,8 @@ public class EmissionsActivity extends Activity implements WSHelperListener,
 			long id) {
 		// TODO Auto-generated method stub
 		Intent detailIntent = new Intent(this, DetailsActivity.class);
+		detailIntent.putExtra("image", ((Emission) ((EmissionAdapter) emissionsLv
+				.getAdapter()).getItem(position)).getIcon());
 		detailIntent.putExtra("detail", ((Emission) ((EmissionAdapter) emissionsLv
 				.getAdapter()).getItem(position)).getDescription());
 		startActivity(detailIntent);
@@ -88,6 +91,18 @@ public class EmissionsActivity extends Activity implements WSHelperListener,
 
 	@Override
 	public void onErrorLoadingPodcasts(String error) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onCurrentEmissionLoaded(CurrentEmission currentEmission) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onErrorLoadingCurrentEmission(String error) {
 		// TODO Auto-generated method stub
 		
 	}

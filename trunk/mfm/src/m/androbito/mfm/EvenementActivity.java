@@ -3,6 +3,7 @@ package m.androbito.mfm;
 import java.util.List;
 
 import m.androbito.adapters.EventAdapter;
+import m.androbito.model.CurrentEmission;
 import m.androbito.model.Emission;
 import m.androbito.model.Event;
 import m.androbito.model.Podcast;
@@ -85,6 +86,18 @@ public class EvenementActivity extends Activity implements WSHelperListener,
 
 	@Override
 	public void onErrorLoadingPodcasts(String error) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onCurrentEmissionLoaded(CurrentEmission currentEmission) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onErrorLoadingCurrentEmission(String error) {
 		// TODO Auto-generated method stub
 		
 	}

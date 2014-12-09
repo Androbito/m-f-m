@@ -37,7 +37,7 @@ public class Emission {
 
 
 	public String getIcon() {
-		return "http://www.mfmradio.ma/uploads/animateurs/min/" + icon;
+		return icon;
 	}
 
 	public void setIcon(String icon) {

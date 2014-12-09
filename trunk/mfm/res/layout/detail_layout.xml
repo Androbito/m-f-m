@@ -52,8 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/sbahlkhir" />
+            android:layout_marginTop="15dp" />
 
         <ScrollView
             android:id="@+id/scrollView1"
@@ -77,6 +76,7 @@
                     android:textColor="#DBD8D3" />
             </LinearLayout>
         </ScrollView>
+
     </RelativeLayout>
 
 </LinearLayout>
