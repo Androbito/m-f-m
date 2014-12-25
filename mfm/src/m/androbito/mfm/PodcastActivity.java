@@ -25,9 +25,10 @@ public class PodcastActivity extends Activity implements WSHelperListener {
 
 	private ConnectivityManager manager;
 	private ListView podsLv;
-	ImageView facebook; 
+	ImageView facebook;
 	ImageView youtube;
-	ImageView twitter; 
+	ImageView twitter;
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		manager = (ConnectivityManager) this
@@ -39,39 +40,41 @@ public class PodcastActivity extends Activity implements WSHelperListener {
 		WSHelper.getInstance().getPodcasts(Urls.apiUrl, manager, this);
 		facebook = (ImageView) findViewById(R.id.imageView1);
 		facebook.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				Uri uri = Uri.parse("https://www.facebook.com/RADIOMFM.Officiel");
+				Uri uri = Uri
+						.parse("https://www.facebook.com/RADIOMFM.Officiel");
 
-		        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-		        startActivity(intent);
-				
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(intent);
+
 			}
 		});
-		
+
 		youtube = (ImageView) findViewById(R.id.imageView2);
 		youtube.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				Uri uri = Uri.parse("https://www.youtube.com/channel/UCFGC3iySyVURobB8-49Iz6A");
+				Uri uri = Uri
+						.parse("https://www.youtube.com/channel/UCFGC3iySyVURobB8-49Iz6A");
 
-		        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-		        startActivity(intent);
-				
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(intent);
+
 			}
 		});
 		twitter = (ImageView) findViewById(R.id.imageView3);
 		twitter.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Uri uri = Uri.parse("https://twitter.com/mfm_officiel");
 
-		        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-		        startActivity(intent);
-				
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(intent);
+
 			}
 		});
 	}
@@ -107,9 +110,17 @@ public class PodcastActivity extends Activity implements WSHelperListener {
 
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
+
 				podsLv.setAdapter(new PodcastAdapter(getApplicationContext(),
-						podcasts));
+						podcasts) {
+
+					@Override
+					public void clickHandle(String videoID) {
+						Intent intent = new Intent(getApplicationContext(), LandVideoActivity.class);
+						intent.putExtra("videoID", videoID);
+						startActivity(intent);
+					}
+				});
 			}
 		});
 	}
@@ -123,12 +134,12 @@ public class PodcastActivity extends Activity implements WSHelperListener {
 	@Override
 	public void onCurrentEmissionLoaded(CurrentEmission currentEmission) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onErrorLoadingCurrentEmission(String error) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

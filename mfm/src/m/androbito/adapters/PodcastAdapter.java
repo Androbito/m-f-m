@@ -6,7 +6,6 @@ import java.util.List;
 import m.androbito.mfm.R;
 import m.androbito.model.Podcast;
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,12 +15,15 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-public class PodcastAdapter extends BaseAdapter {
+public abstract class PodcastAdapter extends BaseAdapter {
+
 	private LayoutInflater mInflater;
 	private List<Podcast> podcasts;
+	private Context context;
 
 	public PodcastAdapter(Context _context, List<Podcast> mPodcast) {
-		mInflater = LayoutInflater.from(_context);
+		context = _context;
+		mInflater = LayoutInflater.from(context);
 		podcasts = new ArrayList<Podcast>();
 		podcasts.addAll(mPodcast);
 
@@ -51,22 +53,18 @@ public class PodcastAdapter extends BaseAdapter {
 		View v = mInflater.inflate(R.layout.podcast_item, parent, false);
 		((TextView) v.findViewById(R.id.textView1)).setText(podcasts.get(
 				position).getNom());
-		((FrameLayout) v.findViewById(R.id.frameLayout1))
-				.setOnClickListener(new OnClickListener() {
+		FrameLayout fview = (FrameLayout) v.findViewById(R.id.frameLayout1);
+		fview.setOnClickListener(new OnClickListener() {
 
-					@Override
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						Intent videoIntent = new Intent(
-								Intent.ACTION_VIEW,
-								Uri.parse("vnd.youtube://"
-										+ Uri.parse(
-												podcasts.get(position).getUrl())
-												.getQueryParameter("v")));
-						videoIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-						mInflater.getContext().startActivity(videoIntent);
-					}
-				});
+			@Override
+			public void onClick(View v) {
+				clickHandle(Uri.parse(podcasts.get(position).getUrl())
+						.getQueryParameter("v"));
+			}
+		});
+
 		return v;
 	}
+
+	public abstract void clickHandle(String urlVideo);
 }
