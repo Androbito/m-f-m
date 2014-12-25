@@ -6,59 +6,66 @@
     android:background="@drawable/body_bg"
     android:orientation="vertical" >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="5dp" >
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal">
 
-        <m.androbito.utils.QSandTextView
-            android:id="@+id/textView1"
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <m.androbito.utils.QSandTextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                qsfont:fontName="Quicksand_Bold.otf" />
+
+            <m.androbito.utils.QSandTextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                qsfont:fontName="Quicksand_Bold.otf" />
+
+            <m.androbito.utils.QSandTextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                qsfont:fontName="Quicksand_Bold.otf" />
+
+            <m.androbito.utils.QSandTextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                qsfont:fontName="Quicksand_Bold.otf" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            qsfont:fontName="Quicksand_Light.otf" />
+            android:scaleType="fitXY" />
 
-        <m.androbito.utils.QSandTextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            qsfont:fontName="Quicksand_Light.otf" />
-
-        <m.androbito.utils.QSandTextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            qsfont:fontName="Quicksand_Light.otf" />
-
-        <m.androbito.utils.QSandTextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            qsfont:fontName="Quicksand_Light.otf" />
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/webplayerholder"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="30dp" >
 
         <WebView
             android:id="@+id/WebView1"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:scrollbars="none" />
+
     </RelativeLayout>
 
     <ScrollView
@@ -119,7 +126,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="40"
                         android:text="CASABLANCA"
-                        qsfont:fontName="Quicksand_Light.otf" />
+                        qsfont:fontName="Quicksand_Bold.otf" />
 
                     <ImageView
                         android:id="@+id/MarrakechApl"
@@ -134,7 +141,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="40"
                         android:text="MARRAKECH"
-                        qsfont:fontName="Quicksand_Light.otf" />
+                        qsfont:fontName="Quicksand_Bold.otf" />
                 </TableRow>
 
                 <TableRow
@@ -157,7 +164,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="40"
                         android:text="AGADIR"
-                        qsfont:fontName="Quicksand_Light.otf" />
+                        qsfont:fontName="Quicksand_Bold.otf" />
 
                     <ImageView
                         android:id="@+id/FesApl"
@@ -172,7 +179,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="40"
                         android:text="FES"
-                        qsfont:fontName="Quicksand_Light.otf" />
+                        qsfont:fontName="Quicksand_Bold.otf" />
                 </TableRow>
             </TableLayout>
         </LinearLayout>
