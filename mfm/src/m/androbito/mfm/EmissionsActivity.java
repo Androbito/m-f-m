@@ -13,18 +13,29 @@ import m.androbito.utils.Urls;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 public class EmissionsActivity extends Activity implements WSHelperListener,
 		OnItemClickListener {
 
 	ListView emissionsLv;
+	ImageView facebook; 
+	ImageView youtube;
+	ImageView twitter; 
+	
+	
+
 	private ConnectivityManager manager;
 
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,11 +44,51 @@ public class EmissionsActivity extends Activity implements WSHelperListener,
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		setContentView(R.layout.emissions_layout);
 		emissionsLv = (ListView) findViewById(R.id.listView1);
+		
 		emissionsLv.setOnItemClickListener(this);
 		WSHelper.getInstance().addWSHelperListener(this);
 		WSHelper.getInstance().getEmissions(Urls.apiUrl, manager, this);
+		facebook = (ImageView) findViewById(R.id.imageView1);
+		facebook.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Uri uri = Uri.parse("https://www.facebook.com/RADIOMFM.Officiel");
+
+		        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		        startActivity(intent);
+				
+			}
+		});
+		
+		youtube = (ImageView) findViewById(R.id.imageView2);
+		youtube.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Uri uri = Uri.parse("https://www.youtube.com/channel/UCFGC3iySyVURobB8-49Iz6A");
+
+		        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		        startActivity(intent);
+				
+			}
+		});
+		twitter = (ImageView) findViewById(R.id.imageView3);
+		twitter.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Uri uri = Uri.parse("https://twitter.com/mfm_officiel");
+
+		        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		        startActivity(intent);
+				
+			}
+		});
+		
 
 	}
+
 
 	@Override
 	public void onEmissionsLoaded(final List<Emission> emissions) {

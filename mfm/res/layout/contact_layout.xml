@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:qsfont="http://schemas.android.com/apk/res/m.androbito.mfm"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DBD8D3"
+    android:background="@drawable/body_bg"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -42,7 +43,7 @@
             android:src="@drawable/mail_ic" />
     </LinearLayout>
 
-    <TextView
+    <m.androbito.utils.QSandTextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,6 +52,7 @@
         android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
         android:padding="10dp"
+        qsfont:fontName="Quicksand_Bold.otf"
         android:text="VOUS ETES TEMOINS D&apos;UN FAIT MARQUANT ?"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold" />
@@ -73,27 +75,24 @@
             android:src="@drawable/add" />
     </FrameLayout>
 
-    <TextView
+    <m.androbito.utils.QSandTextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/frameLayout1"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
+        qsfont:fontName="Quicksand_Light.otf"
         android:layout_toRightOf="@+id/frameLayout1"
         android:text="Cliquez sur la camera pour prendre une photo"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/frameLayout1" >
-
         <LinearLayout
+            android:id="@+id/formulaire"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_below="@+id/frameLayout1"
             android:padding="10dp" >
 
             <LinearLayout
@@ -109,6 +108,8 @@
                     android:background="@drawable/nom"
                     android:ems="10"
                     android:hint="nom"
+                    android:inputType="textPersonName"
+                    android:lines="1"
                     android:paddingLeft="5dp" />
 
                 <EditText
@@ -120,7 +121,10 @@
                     android:background="@drawable/nom"
                     android:ems="10"
                     android:hint="prenom"
+                    android:inputType="textPersonName"
+                    android:lines="1"
                     android:paddingLeft="5dp" />
+
             </LinearLayout>
 
             <EditText
@@ -155,6 +159,6 @@
                 android:text="Envoyer"
                 android:textColor="@android:color/white" />
         </LinearLayout>
-    </ScrollView>
+   
 
 </RelativeLayout>

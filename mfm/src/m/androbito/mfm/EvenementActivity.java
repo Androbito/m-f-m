@@ -14,9 +14,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -24,6 +27,9 @@ public class EvenementActivity extends Activity implements WSHelperListener,
 		OnItemClickListener {
 	private ConnectivityManager manager;
 	private ListView eventsLv;
+	ImageView facebook; 
+	ImageView youtube;
+	ImageView twitter; 
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,6 +40,43 @@ public class EvenementActivity extends Activity implements WSHelperListener,
 		eventsLv.setOnItemClickListener(this);
 		WSHelper.getInstance().addWSHelperListener(this);
 		WSHelper.getInstance().getEvents(Urls.apiUrl, manager, this);
+		facebook = (ImageView) findViewById(R.id.imageView1);
+		facebook.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Uri uri = Uri.parse("https://www.facebook.com/RADIOMFM.Officiel");
+
+		        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		        startActivity(intent);
+				
+			}
+		});
+		
+		youtube = (ImageView) findViewById(R.id.imageView2);
+		youtube.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Uri uri = Uri.parse("https://www.youtube.com/channel/UCFGC3iySyVURobB8-49Iz6A");
+
+		        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		        startActivity(intent);
+				
+			}
+		});
+		twitter = (ImageView) findViewById(R.id.imageView3);
+		twitter.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Uri uri = Uri.parse("https://twitter.com/mfm_officiel");
+
+		        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		        startActivity(intent);
+				
+			}
+		});
 	}
 
 	@Override

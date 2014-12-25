@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:qsfont="http://schemas.android.com/apk/res/m.androbito.mfm"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:background="@android:color/background_light"
     android:orientation="vertical" >
 
-    <TextView
+    <m.androbito.utils.QSandTextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,10 +17,11 @@
         android:text="Titre"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#C60B1E"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        qsfont:fontName="Quicksand_Bold.otf" />
 
-    <TextView
+    <m.androbito.utils.QSandTextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,6 +29,7 @@
         android:layout_below="@+id/textView1"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="25dp"
+        qsfont:fontName="Quicksand_Light.otf"
         android:text="NomPrenom"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#6E6E6E" />
@@ -39,16 +42,31 @@
         android:layout_alignParentTop="true"
         android:layout_margin="5dp" />
 
-    <TextView
+    <m.androbito.utils.QSandTextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignWithParentIfMissing="false"
         android:layout_toLeftOf="@+id/imageView1"
+        android:paddingRight="0dp"
+        qsfont:fontName="Quicksand_Light.otf"
         android:text="18:00"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#6E6E6E"
+        android:textSize="15sp" />
+
+    <m.androbito.utils.QSandTextView
+        android:id="@+id/TextView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_centerVertical="true"
+        android:text="Titre"
+        qsfont:fontName="Quicksand_Light.otf"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#C60B1E"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
 </RelativeLayout>

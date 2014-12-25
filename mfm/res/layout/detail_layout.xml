@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:qsfont="http://schemas.android.com/apk/res/m.androbito.mfm"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -52,7 +53,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="15dp"
+            android:maxHeight="100dp"
+            android:maxWidth="100dp"
+            android:scaleType="fitCenter" />
 
         <ScrollView
             android:id="@+id/scrollView1"
@@ -67,16 +71,16 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <TextView
+                <m.androbito.utils.QSandTextView
                     android:id="@+id/textView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Detail"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#DBD8D3" />
+                    android:textColor="#DBD8D3"
+                    qsfont:fontName="Quicksand_Light.otf" />
             </LinearLayout>
         </ScrollView>
-
     </RelativeLayout>
 
 </LinearLayout>

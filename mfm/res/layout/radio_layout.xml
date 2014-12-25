@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:qsfont="http://schemas.android.com/apk/res/m.androbito.mfm"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/body_bg"
@@ -17,92 +18,47 @@
         android:orientation="vertical"
         android:padding="5dp" >
 
-        <TextView
+        <m.androbito.utils.QSandTextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Medium Text"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            qsfont:fontName="Quicksand_Light.otf" />
 
-        <TextView
+        <m.androbito.utils.QSandTextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            qsfont:fontName="Quicksand_Light.otf" />
 
-        <TextView
+        <m.androbito.utils.QSandTextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Small Text"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            qsfont:fontName="Quicksand_Light.otf" />
 
-        <TextView
+        <m.androbito.utils.QSandTextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Small Text"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            qsfont:fontName="Quicksand_Light.otf" />
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/webplayerholder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bande" >
+        android:layout_height="30dp" >
 
-        <ImageView
-            android:id="@+id/imageView7"
+        <WebView
+            android:id="@+id/WebView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/volum_up" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="14dp"
-            android:layout_toLeftOf="@+id/imageView7"
-            android:src="@drawable/volume" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView2"
-            android:layout_marginRight="14dp"
-            android:layout_toLeftOf="@+id/imageView6"
-            android:src="@drawable/volume_down" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/imageView3"
-            android:src="@drawable/suivant" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/precedent" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/imageView2"
-            android:src="@drawable/pause" />
+            android:scrollbars="none" />
     </RelativeLayout>
 
     <ScrollView
@@ -157,12 +113,13 @@
                         android:layout_weight="10"
                         android:src="@drawable/call" />
 
-                    <TextView
+                    <m.androbito.utils.QSandTextView
                         android:id="@+id/CasaTxt"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="40"
-                        android:text="CASABLANCA" />
+                        android:text="CASABLANCA"
+                        qsfont:fontName="Quicksand_Light.otf" />
 
                     <ImageView
                         android:id="@+id/MarrakechApl"
@@ -171,12 +128,13 @@
                         android:layout_weight="10"
                         android:src="@drawable/call" />
 
-                    <TextView
+                    <m.androbito.utils.QSandTextView
                         android:id="@+id/MarrakechTxt"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="40"
-                        android:text="MARRAKECH" />
+                        android:text="MARRAKECH"
+                        qsfont:fontName="Quicksand_Light.otf" />
                 </TableRow>
 
                 <TableRow
@@ -193,12 +151,13 @@
                         android:layout_weight="10"
                         android:src="@drawable/call" />
 
-                    <TextView
+                    <m.androbito.utils.QSandTextView
                         android:id="@+id/AgadirTxt"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="40"
-                        android:text="AGADIR" />
+                        android:text="AGADIR"
+                        qsfont:fontName="Quicksand_Light.otf" />
 
                     <ImageView
                         android:id="@+id/FesApl"
@@ -207,12 +166,13 @@
                         android:layout_weight="10"
                         android:src="@drawable/call" />
 
-                    <TextView
+                    <m.androbito.utils.QSandTextView
                         android:id="@+id/FesText"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="40"
-                        android:text="FES" />
+                        android:text="FES"
+                        qsfont:fontName="Quicksand_Light.otf" />
                 </TableRow>
             </TableLayout>
         </LinearLayout>
