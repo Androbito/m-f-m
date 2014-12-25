@@ -12,6 +12,7 @@ import android.webkit.WebView;
 public class LandVideoActivity extends Activity {
 	WebView mWebView, fullweb;
 	String videoID;
+	private WebView myWebView;
 
 	@SuppressWarnings("deprecation")
 	@SuppressLint("SetJavaScriptEnabled")
@@ -26,7 +27,7 @@ public class LandVideoActivity extends Activity {
 
 		videoID = getIntent().getStringExtra("videoID");
 
-		WebView myWebView = (WebView) findViewById(R.id.fullwebview);
+		myWebView = (WebView) findViewById(R.id.fullwebview);
 		myWebView.getSettings().setJavaScriptEnabled(true);
 		myWebView.getSettings().setPluginState(PluginState.ON);
 		myWebView.loadUrl("http://www.youtube.com/embed/" + videoID
@@ -34,5 +35,30 @@ public class LandVideoActivity extends Activity {
 		Log.i("URL_Video", "http://www.youtube.com/embed/" + videoID
 				+ "?autoplay=1");
 		myWebView.setWebChromeClient(new WebChromeClient());
+	}
+	
+	@Override
+	public void onPause() {
+	    super.onPause();
+	    myWebView.onPause();
+	    myWebView.pauseTimers(); //careful with this! Pauses all layout, parsing, and JavaScript timers for all WebViews.
+	}
+
+	@Override
+	public void onResume() {
+	    super.onResume();
+	    myWebView.onResume();
+	    myWebView.resumeTimers();
+	}
+
+	@Override
+	public void onDestroy() {
+	    super.onDestroy();
+	    myWebView.loadUrl("about:blank"); 
+	    myWebView.stopLoading();
+	    myWebView.setWebChromeClient(null);
+	    myWebView.setWebViewClient(null);
+	    myWebView.destroy();
+	    myWebView = null;
 	}
 }
