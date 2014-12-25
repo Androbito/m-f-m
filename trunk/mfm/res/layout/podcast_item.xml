@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:qsfont="http://schemas.android.com/apk/res/m.androbito.mfm"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:background="@android:color/background_light"
@@ -22,7 +23,7 @@
             android:src="@drawable/podcast_actif" />
     </FrameLayout>
 
-    <TextView
+    <m.androbito.utils.QSandTextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,9 +31,9 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
         android:text="Titre"
+        qsfont:fontName="Quicksand_Bold.otf"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#C60B1E"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textSize="15sp"/>
 
 </RelativeLayout>

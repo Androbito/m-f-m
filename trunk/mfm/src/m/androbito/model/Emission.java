@@ -22,10 +22,12 @@ public class Emission {
 	private String description;
 
 
-	public String getTitle_emission() {
-		return title_emission1+" "+title_emission2;
+	public String getTitle1_emission() {
+		return title_emission1;
 	}
-
+	public String getTitle2_emission() {
+		return title_emission2;
+	}
 
 	public String getAuditeur_emission() {
 		return auditeur_emission;

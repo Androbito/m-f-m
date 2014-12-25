@@ -51,7 +51,11 @@ public class EmissionAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		View v = mInflater.inflate(R.layout.emission_item, parent, false);
 		((TextView) v.findViewById(R.id.textView1)).setText(emissions.get(
-				position).getTitle_emission());
+				position).getTitle1_emission());
+		((TextView) v.findViewById(R.id.TextView11)).setText(emissions.get(
+				position).getTitle2_emission());
+		//((TextView) v.findViewById(R.id.textView1)).setTextSize(10);
+		
 		((TextView) v.findViewById(R.id.textView2)).setText(emissions.get(
 				position).getAuditeur_emission());
 		((TextView) v.findViewById(R.id.textView3)).setText(emissions.get(

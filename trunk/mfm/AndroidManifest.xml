@@ -6,8 +6,9 @@
 
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="14" />
-
+        android:targetSdkVersion="14" />  
+	<uses-permission android:name="android.permission.CALL_PHONE" />  
+	<uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -49,7 +50,7 @@
         </activity>
         <activity
             android:name="m.androbito.mfm.ContactActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan">
         </activity>
         <activity
             android:name="m.androbito.mfm.DetailsActivity"
